@@ -7,11 +7,13 @@ var img = [randomNumber(), randomNumber(), randomNumber()];
 }) ();
 
 (function checkForDuplicates() {
-    while(img[1] === img[0]) {
-        img[1] = randomNumber()
+    if(img[1] === img[0]) {
+        img[1] = randomNumber();
+        checkForDuplicates()
     }
-    while(img[2] === img[0] || img[2] === img[1]) {
-        img[2] = randomNumber()
+    if(img[2] === img[0] || img[2] === img[1]) {
+        img[2] = randomNumber();
+        checkForDuplicates()
     }
 }) ();
 
